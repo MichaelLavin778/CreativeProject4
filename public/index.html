@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <title>BYU CS260 Chat</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    <div class="row">
+      <div class="column">
+        <h1>Chat</h1>
+        <form @submit.prevent="addItem">
+          <textarea placeholder="message" v-model="text"></textarea></p>
+          <input placeholder="name" type="text" v-model="name"></p>
+          <br>
+          <button type="submit">Send!</button>
+        </form>
+        
+        <p v-show="items.length === 0">It's quiet here (=>.<=)</p>
+        
+        <div v-for="item in items">
+          <hr>
+          <div class="items">
+            <div class="item">
+              <p>{{ item.text }}</p>
+              <p><i>-- {{ item.name }}</i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h1>Chat Rules</h1>
+        <br>
+        <ol>
+          <li>Please Be Courtous</li>
+          <br>
+          <li>Use Clean Language</li>
+          <br>
+          <li>Follow the Honor Code</li>
+          <br>
+          <li>Be Sensitive to Others</li>
+          <br>
+          <li>Be Social and Have Fun!</li>
+        </ol>
+        <br>
+        <img src="https://media.giphy.com/media/hcrezmYwSLNGE/source.gif"></img>
+      </div>
+    </div>
+    
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="javascripts/script.js"></script>
+</body>
+
+</html>
